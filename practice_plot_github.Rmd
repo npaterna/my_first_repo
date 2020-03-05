@@ -17,6 +17,7 @@ library(tidyverse)
 iris %>%
   ggplot(aes(x = Sepal.Length, fill = Species)) +
   geom_density(alpha = 0.6) +
+  scale_fill_manual(values = c("pink2", "gold2", "orange2")) +
   labs(x = "Sepal Length", y = "Density") +
   theme_minimal() -> github_plot
 
