@@ -1,0 +1,28 @@
+---
+title: "Practice Plotting & Github"
+author: "Nicholas Paterna"
+date: "3/5/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+```{r}
+iris %>%
+  ggplot(aes(x = Sepal.Length, fill = Species)) +
+  geom_density(alpha = 0.6) +
+  labs(x = "Sepal Length", y = "Density") +
+  theme_minimal() -> github_plot
+
+github_plot
+
+ggsave("my_first_repo/practice_plot.png", github_plot, height = 4, width = 6)
+
+```
+
